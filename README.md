@@ -1,5 +1,7 @@
 # Robustness Lab — 模型鲁棒性测试与防御评估工程
 
+[![CI](https://github.com/KK-0128/mnist-robustness-testing/actions/workflows/ci.yml/badge.svg)](https://github.com/KK-0128/mnist-robustness-testing/actions/workflows/ci.yml)
+
 把毕业设计《Robust Design of Deep Neural Networks against Adversarial Attacks》
 中的一次性实验脚本，重构为**可复现、可测试、可 CI 集成**的标准 Python 测试工程。
 
