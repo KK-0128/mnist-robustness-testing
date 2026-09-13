@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Experiment outputs (keep the folder, ignore the data)
+experiments/results/*
+!experiments/results/.gitkeep
+
+# Local MNIST copies
+data/
+.tmp_mnist/

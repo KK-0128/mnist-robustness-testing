@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robustness-lab"
+version = "0.1.0"
+description = "Deep learning model robustness testing & defense evaluation (MNIST, FGSM/PGD/CW attacks, adversarial training + randomized smoothing)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+]
+viz = ["matplotlib>=3.7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "smoke: fast tests runnable on CPU in CI",
+    "full: full-scale tests run locally / on GPU",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"

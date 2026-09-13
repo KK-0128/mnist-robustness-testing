@@ -1,0 +1,35 @@
+# FGSM adversarial training, eps=0.1 (report section 4.3.1)
+defense: fgsm
+output_dir: experiments/results
+
+data:
+  root: ./data
+  train_batch_size: 64
+  test_batch_size: 1
+  num_workers: 1
+
+train:
+  epochs: 5
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0005
+  seed: 42
+
+fgsm:
+  eps: 0.1
+
+cw:
+  c: 10.0
+  k: 0.0
+  lr: 0.01
+  max_iter: 100
+
+rs:
+  sigma: 0.25
+  n_samples: 30
+  alpha: 0.001
+  cert_max_samples: 100
+
+eval:
+  epsilons: [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
+  pgd_alpha: 0.01
